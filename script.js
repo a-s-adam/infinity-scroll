@@ -7,14 +7,15 @@ let imagesLoaded = 0;
 let totalImages = 0;
 
 // Unsplash
-const count = 10;
-const apiKey = 'ZQzA23zxoaEeDJ-3 -UgPJFIaE_uu0P4EKxN2W79VlC4';
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+const imageCount = 10;
+const apiKey = 'ZQzA23zxoaEeDJ-3-UgPJFIaE_uu0P4EKxN2W79VlC4';
+const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}count=${imageCount}`;
 
 //Check if all images were loaded in photosArray
 function imageLoaded(){
-    imagesLoaded += 1;
+    imagesLoaded++;
     if(imagesLoaded === totalImages){
+        count = 30;
         ready = true;
         loader.hidden = true;
     }
@@ -25,7 +26,7 @@ function imageLoaded(){
 function setAttributes(element,attributes){
     for (const key in attributes){
         element.setAttribute(key,attributes[key]);
-    }
+    };
 }
 
 
@@ -78,5 +79,5 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
+// On Load
 getPhotos();
