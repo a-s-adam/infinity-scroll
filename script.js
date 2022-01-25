@@ -54,7 +54,7 @@ function displayPhotos() {
         item.appendChild(img);
         imageContainer.appendChild(item);
 
-    })
+    });
 }
 
 
@@ -73,8 +73,8 @@ async function getPhotos() {
 // Scroll event near bottom of page, Load more photos
 window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready){
-        ready = false;
         getPhotos();
+        ready = false;
     }
 });
 
